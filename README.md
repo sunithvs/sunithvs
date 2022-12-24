@@ -18,7 +18,7 @@
 ###
 
 <div align="left">
-  <a href="https://www.linkedin.com/sunithvs/" target="_blank">
+  <a href="www.linkedin.com/in/sunithvs" target="_blank">
     <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/linkedin/default.svg" width="55" height="40" alt="linkedin logo"  />
   </a>
   <a href="https://www.instagram.com/sunithvs_/" target="_blank">
