@@ -2,7 +2,7 @@
 
 ###
 
-<h3 align="center">Web Developer | Python | Trainer | Entrepreneur</h3>
+<h3 align="center">Web Developer | Python Developer  | Trainer | Entrepreneur</h3>
 
 ###
 
