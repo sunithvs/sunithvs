@@ -37,6 +37,6 @@ jobs:
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git add README.md
+        git add .
         git commit -m "Update weekly screenshots" || exit 0
         git push
