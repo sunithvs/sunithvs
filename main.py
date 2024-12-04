@@ -48,11 +48,11 @@ def take_full_screenshot(url, output_path):
         viewport_height = driver.execute_script("return window.innerHeight")
 
         # Set viewport width and height
-        driver.set_window_size(1920, viewport_height)
+        driver.set_window_size(1800, viewport_height)
 
         # If page is longer than viewport, take full page screenshot
         if total_height > viewport_height:
-            driver.set_window_size(1920, int(total_height * 1.05))
+            driver.set_window_size(1800, int(total_height * 1.05))
             time.sleep(1)  # Wait for page to adjust
 
         # Take screenshot
