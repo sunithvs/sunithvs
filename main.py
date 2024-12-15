@@ -8,11 +8,9 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 SITES = {
-    'Profile': 'https://www.sunithvs.com',
+    'Profile': 'https://devb.io/sunithvs'
     # 'Me': 'https://www.sunithvs.com/about',
-    'Blogs': 'https://www.sunithvs.com/blogs',
-    'Projects': 'https://www.sunithvs.com/projects',
-    'Contact': 'https://www.sunithvs.com/contact'
+    
 }
 
 
