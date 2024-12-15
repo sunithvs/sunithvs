@@ -1,1 +1,1 @@
-[![Profile Screenshot](images/profile_screenshot.png)](https://devb.io/sunithvs)
+[![main Screenshot](images/main_screenshot.png)](https://devb.io/sunithvs)
