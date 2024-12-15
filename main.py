@@ -8,7 +8,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 SITES = {
-    'Profile': 'https://devb.io/sunithvs'
+    'main': 'https://devb.io/sunithvs'
     # 'Me': 'https://www.sunithvs.com/about',
     
 }
