@@ -2,8 +2,8 @@ name: Weekly Website Screenshots
 
 on:
   schedule:
-    # Run at 00:00 UTC every Sunday
-    - cron: '0 0 * * 0'
+    # Run at 00:00 UTC every saturday
+    - cron: '0 0 * * 6'
 
   workflow_dispatch:
     inputs:
