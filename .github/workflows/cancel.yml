@@ -4,28 +4,26 @@ on:
   pull_request:
     types: [closed]
   workflow_dispatch:
+
 jobs:
   cancel-other-runs:
     runs-on: ubuntu-latest
 
     permissions:
-      actions: write  # Required to cancel workflows
+      actions: write
       contents: read
 
     steps:
-      - name: Cancel previous runs
+      - name: Cancel other in-progress runs
         uses: actions/github-script@v7
         with:
           script: |
             const currentRunId = process.env.GITHUB_RUN_ID;
-            const workflowId = process.env.GITHUB_WORKFLOW;
 
             const runs = await github.rest.actions.listWorkflowRunsForRepo({
               owner: context.repo.owner,
               repo: context.repo.repo,
               per_page: 100,
-              workflow_id: workflowId,
-              branch: context.payload.pull_request.head.ref,
               status: 'in_progress'
             });
 
