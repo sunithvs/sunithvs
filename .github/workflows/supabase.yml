@@ -1,0 +1,36 @@
+name: Supabase Keep Alive
+
+on:
+  schedule:
+    # Runs every Tuesday and Friday at 8:00 AM UTC
+    # Twice a week is enough — projects pause after 7 days of inactivity
+    - cron: "0 8 * * 2,5"
+  workflow_dispatch: # Allow manual trigger from GitHub Actions UI
+
+jobs:
+  keep-alive:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        # Add your Supabase project refs here (the subdomain from your project URL)
+        # Example: if your URL is https://abcdefghijkl.supabase.co
+        #          then your project ref is: abcdefghijkl
+        project_ref:
+          - rmswlzmiktwzisxeviqh
+          - dkdptkansfatmlnmeepf
+
+    steps:
+      - name: Ping Supabase project (${{ matrix.project_ref }})
+        run: |
+          echo "Pinging ${{ matrix.project_ref }}..."
+          response=$(curl -s -o /dev/null -w "%{http_code}" \
+            "https://${{ matrix.project_ref }}.supabase.co/auth/v1/verify")
+
+          if [ "$response" -eq 400 ]; then
+            echo "✅ Project ${{ matrix.project_ref }} is alive (HTTP $response)"
+          elif [ "$response" -eq 000 ]; then
+            echo "⚠️ Project ${{ matrix.project_ref }} may be paused (no response)"
+            exit 1
+          else
+            echo "ℹ️ Project ${{ matrix.project_ref }} responded with HTTP $response"
+          fi
